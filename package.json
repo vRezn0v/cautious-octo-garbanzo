@@ -1,0 +1,19 @@
+{
+  "name": "chadboxapi",
+  "version": "1.0.0",
+  "description": "Chadbox Backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vRezn0v/cautious-octo-garbanzo.git"
+  },
+  "author": "Abhinav Tomar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vRezn0v/cautious-octo-garbanzo/issues"
+  },
+  "homepage": "https://github.com/vRezn0v/cautious-octo-garbanzo#readme"
+}
