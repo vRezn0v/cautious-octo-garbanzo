@@ -15,7 +15,7 @@ const post = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    num_of_comments: {
+    comment_count: {
         type: Number,
         default: 0
     }
