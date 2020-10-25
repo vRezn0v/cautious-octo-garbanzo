@@ -23,7 +23,7 @@ router.get('/h/:hub', function (req, res) {
             } else {
                 res.status(404);
                 res.json({
-                    error: `Unable to find posts from /r/${req.params.hub}`
+                    error: `Unable to find posts from /hub/${req.params.hub}`
                 })
             }
         })
