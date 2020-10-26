@@ -46,7 +46,7 @@ exports.get_all = function (req, res) {
             if (err) throw err;
 
             if (doc.length) {
-                subreddits = doc
+                hubs = doc
             }
         }).then(function () {
             PostState.find({
@@ -67,7 +67,7 @@ exports.get_all = function (req, res) {
                     console.log(`[Frontpage] fetching posts!`)
                     res.send({
                         posts: posts,
-                        subreddits: subreddits,
+                        hubs: hubs,
                         subscribed: subscribed,
                         karma: karma,
                         isAuth: req.isAuthenticated()
