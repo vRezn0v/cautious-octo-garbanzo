@@ -6,7 +6,7 @@ let settings_controller = require("../controllers/settings_controller")
 
 router.get('/settings', authenticateUser(), settings_controller.view);
 router.put('/settings/change/password', settings_controller.change_password);
-router.delete('/settings/delete/account', settings_controller.delete_account);
+router.delete('/settings/delete/account', settings_controller.delete_user);
 
 function authenticateUser() {
     return function (req, res, next) {

@@ -6,7 +6,7 @@ const router = express.Router();
 let Post = require("../models/post");
 let Comment = require("../models/comment");
 let Profile = require("../models/profile");
-let Account = require("../models/account");
+let User = require("../models/user");
 
 
 router.get('/h/:hub', function (req, res) {
@@ -156,7 +156,7 @@ router.post('/register', function (req, res) {
             bcrypt.hash(req.body.password, 10, function (err, hash) {
                 if (err) throw err
 
-                Account({
+                User({
                     username: req.body.username,
                     password: hash,
                     created: Date.now()
