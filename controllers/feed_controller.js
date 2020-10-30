@@ -1,13 +1,13 @@
 let Hub = require("../models/hub");
 let Post = require("../models/post");
 let Profile = require("../models/profile");
-let PostState = require("../models/poststate")
+let PostState = require("../models/postState")
 
 exports.get_all = function (req, res) {
     let subscribed = undefined;
     let hubs = undefined;
     let posts = undefined;
-    let karma = 0;
+    let chadpoints = 0;
     let sort = undefined;
 
     switch (req.query.sort) {
@@ -39,10 +39,10 @@ exports.get_all = function (req, res) {
 
         if (result.length) {
             subscribed = result[0]['subscribed'];
-            karma = result[0]['karma_post'] + result[0]['karma_comment']
+            chadpoints = result[0]['chadpoints'] + result[0]['comment_chadpoints']
         }
     }).then(function () {
-        Subreddit.find({}, function (err, doc) {
+        Hub.find({}, function (err, doc) {
             if (err) throw err;
 
             if (doc.length) {
@@ -69,7 +69,7 @@ exports.get_all = function (req, res) {
                         posts: posts,
                         hubs: hubs,
                         subscribed: subscribed,
-                        karma: karma,
+                        chadpoints: chadpoints,
                         isAuth: req.isAuthenticated()
                     })
                 });
